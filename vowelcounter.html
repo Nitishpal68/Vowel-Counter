@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vowel Counter</title>
+	<link rel="stylesheet" type="text/css" href="vowelcounterstyle.css">
+</head>
+<body>
+<div class="box">
+	<h4>Vowel Counter</h4>
+	<textarea id="textArea" onkeyup="countVowel(this.value)"></textarea>
+	<p>Vowels<span id="vowelcount">0</span></p>
+	<br><br>
+	<footer>
+		Made with ❤️ By Nitish
+	</footer>
+</div>
+<script type="text/javascript">
+	var count = document.getElementById('vowelcount');
+	function countVowel(str) {
+		str = str.toLowerCase();
+		let vowArr = ['a','e','i','o','u'];
+			counter=0;
+
+			for (let letter of str) {
+				if (vowArr.includes(letter)) {
+					counter++;
+					vowelcount.classList.add('blink');
+
+				}
+				else
+				{
+					vowelcount.classList.remove('blink');
+				}
+			}
+			vowelcount.innerHTML = counter;
+	}
+
+</script>
+</body>
+</html>
